@@ -1,0 +1,27 @@
+<template name="fbe772ee">
+  <view class="_view data-v-2a105ae4 mine">
+    <view class="_view data-v-2a105ae4 header">
+      <image src="../../static/image/mine-banner.jpg" class="_image data-v-2a105ae4 banner"></image>
+    </view>
+    <view class="_view data-v-2a105ae4 option first">
+      <image src="../../static/image/count.png" class="_image data-v-2a105ae4 option-img"></image>
+      <text class="_text data-v-2a105ae4 desc">我的账户</text>
+    </view>
+    <view class="_view data-v-2a105ae4 option">
+      <image src="../../static/image/order.png" class="_image data-v-2a105ae4 option-img bigger"></image>
+      <text class="_text data-v-2a105ae4 desc">我的订单</text>
+    </view>
+    <view class="_view data-v-2a105ae4 option">
+      <image src="../../static/image/foot.png" class="_image data-v-2a105ae4 option-img bigger"></image>
+      <text class="_text data-v-2a105ae4 desc">我的足迹</text>
+    </view>
+    <view class="_view data-v-2a105ae4 option">
+      <image src="../../static/image/advice.png" class="_image data-v-2a105ae4 option-img"></image>
+      <text class="_text data-v-2a105ae4 desc">意见反馈</text>
+    </view>
+    <view class="_view data-v-2a105ae4 option">
+      <image src="../../static/image/about.png" class="_image data-v-2a105ae4 option-img"></image>
+      <text class="_text data-v-2a105ae4 desc">关于我们</text>
+    </view>
+  </view>
+</template>

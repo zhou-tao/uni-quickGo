@@ -1,0 +1,56 @@
+@import "../../common/vendor.wxss";
+
+.mine {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  background: #DEDEDE;
+}
+.header {
+  width: 100%;
+  height: 340rpx;
+}
+.banner {
+  width: 100%;
+  height: 340rpx;
+}
+.option {
+  width: 100%;
+  height: 90rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-top: 5rpx;
+  background: white;
+}
+.first {
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.option:active {
+  background: #B8B8B8;
+}
+.option-img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 30rpx;
+}
+.bigger {
+  width: 46rpx;
+  height: 46rpx;
+  margin-left: 24rpx;
+}
+.desc {
+  color: #666666;
+  font-size: 32rpx;
+  margin-left: 30rpx;
+}
