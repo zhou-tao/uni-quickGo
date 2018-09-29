@@ -1,0 +1,42 @@
+@import "../../common/vendor.wxss";
+.page {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+}
+.menu {
+  width: 100%;
+  height: 100rpx;
+  background: #B8B8B8;
+}
+.item {
+  display: inline-block;
+  width: 33.3%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: white;
+  font-size: 32rpx;
+}
+.item:active {
+  background: #EBEBEB;
+}
+.item:hover {
+  border-bottom: solid 8rpx #66ffcc;
+  box-sizing: border-box;
+  color: #66FFCC;
+}
+.activeClass {
+  border-bottom: solid 8rpx #66ffcc;
+  box-sizing: border-box;
+  color: #66FFCC;
+}

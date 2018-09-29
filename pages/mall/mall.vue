@@ -47,7 +47,7 @@
 					type: 4
 				}, {
 					image: 'https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product3.jpg',
-					title: 'Apple MacBook Pro 13.3英寸笔记本电脑（2017款Core i5处理器/8GB内存/256GB硬盘 MPXT2CH/A）',
+					title: 'Apple MacBook Pro 13.3英寸笔记本电脑（2017款Core i5处理器/8GB内存/256GB硬盘 MupxT2CH/A）',
 					originalPrice: 12999,
 					favourPrice: 10688,
 					tip: '秒杀',
@@ -93,28 +93,22 @@
 </script>
 
 <style>
-	.page{
-		display: flex;
-		width: 100%;
-		flex-wrap: wrap;
-		flex-direction: row;
-		align-content: flex-start;  /*交叉轴的起点对齐*/
-	}
+	@import '../../utils/css/page.css';
 	
 	.menu{
 		width: 100%;
-		height: 100px;
+		height: 100upx;
 		background: #B8B8B8; 
 	}
 	
 	.item{
 		display: inline-block;
 		width: 20%;
-		height: 100px;
+		height: 100upx;
 		text-align: center;
-		line-height: 100px;
+		line-height: 100upx;
 		color: white;
-		font-size: 32px;
+		font-size: 32upx;
 	}
 	
 	.item:active{
@@ -122,13 +116,13 @@
 	}
 	
 	.item:hover{
-		border-bottom: solid 8px #66ffcc;
+		border-bottom: solid 8upx #66ffcc;
 		box-sizing: border-box;
 		color: #66FFCC;
 	}
 	
 	.activeClass{
-		border-bottom: solid 8px #66ffcc;
+		border-bottom: solid 8upx #66ffcc;
 		box-sizing: border-box;
 		color: #66FFCC;
 	}

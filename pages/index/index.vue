@@ -1,5 +1,5 @@
 <template>
-	<view class="wrapper">		
+	<view class="page">		
 		<view class="swipper-content">
 			<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" indicator-active-color="#ffffff" class="swipper-content">
 				<swiper-item v-for="item in imgList" :key="item.url">
@@ -28,11 +28,11 @@
 			indicatorDots: true,  //显示轮播指示点
 			productList: [],   //推荐商品
 			imgList: [{
-				url : "../../static/image/1.jpg"
+				url : "../../static/image/3.jpg"
 			},{
 				url : "../../static/image/2.jpg"
 			},{
-				url : "../../static/image/3.jpg"
+				url : "../../static/image/1.jpg"
 			}]
 		},
 		components: {
@@ -54,7 +54,7 @@
 					tip: '优惠'
 				}, {
 					image: 'https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product3.jpg',
-					title: 'Apple MacBook Pro 13.3英寸笔记本电脑（2017款Core i5处理器/8GB内存/256GB硬盘 MPXT2CH/A）',
+					title: 'Apple MacBook Pro 13.3英寸笔记本电脑（2017款Core i5处理器/8GB内存/256GB硬盘 MupxT2CH/A）',
 					originalPrice: 12999,
 					favourPrice: 10688,
 					tip: '秒杀'
@@ -99,35 +99,29 @@
 </script>
 
 <style>
-	.wrapper{
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-content: flex-start;  /*交叉轴的起点对齐*/
-	}
+	@import '../../utils/css/page.css';
 	
 	.swipper-content {
 		width: 100%;
-		height: 300px;
+		height: 300upx;
 		background: #AEEEEE;
 	}
 
 	.swipper-img{
 		width: 100%;
-		height: 300px;
+		height: 300upx;
 	}
 	
 	.line-content{
 		width: 100%;
-		height: 80px;
+		height: 80upx;
 		align-items: center;
 		justify-content: center;
 	}
 	
 	.line{
 		width: 36%;
-		height: 2px;
+		height: 2upx;
 		background: #BABABA;
 		align-items: center;
 		justify-content: center;
@@ -135,8 +129,8 @@
 	
 	.content{
 		color: #BABABA;
-		font-size: 32px;
-		margin: 0 20px;
+		font-size: 32upx;
+		margin: 0 20upx;
 	}
 	
 </style>

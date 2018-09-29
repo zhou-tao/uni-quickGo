@@ -1,64 +1,125 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "尤尼快购"
+    "pages" : [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path" : "pages/index/index",
+            "style" : {
+                "navigationBarTitleText" : "尤尼快购"
+            }
+        },
+        {
+            "path" : "pages/mall/mall",
+            "style" : {
+                "navigationBarTitleText" : "商城"
+            }
+        },
+        {
+            "path" : "pages/shopping-car/shopping-car",
+            "style" : {
+                "navigationBarTitleText" : "购物车"
+            }
+        },
+        {
+            "path" : "pages/mine/mine",
+            "style" : {
+                "navigationBarTitleText" : "我的"
+            }
+        },
+        {
+            "path" : "pages/about-us/about-us",
+            "style" : {
+                "navigationBarTitleText" : "关于我们"
+            }
+        },
+        {
+            "path" : "pages/feedback/feedback",
+            "style" : {
+                "navigationBarTitleText" : "意见反馈"
+            }
+        },
+        {
+            "path" : "pages/account/account",
+            "style" : {
+                "navigationBarTitleText" : "我的账户"
+            }
+        },
+        {
+            "path" : "pages/order/order",
+            "style" : {
+                "navigationBarTitleText" : "我的订单"
+            }
+        },
+        {
+            "path" : "pages/footprint/footprint",
+            "style" : {
+                "navigationBarTitleText" : "我的足迹"
+            }
+        },
+        {
+            "path" : "pages/we-cropper/we-cropper",
+            "style" : {
+                "navigationBarTitleText" : "头像裁剪"
+            }
+        },
+        {
+            "path" : "pages/set/set",
+            "style" : {
+                "navigationBarTitleText" : "个人设置"
+            }
+        },
+        {
+            "path" : "pages/set/set-name/set-name",
+            "style" : {
+				"navigationBarTitleText" : "更换昵称"
 			}
-		},
-		{
-			"path": "pages/mall/mall",
-			"style": {
-				"navigationBarTitleText": "商城"
+        },
+        {
+            "path" : "pages/set/set-phone/set-phone",
+            "style" : {
+				"navigationBarTitleText" : "绑定手机"
 			}
-		},
-		{
-			"path": "pages/shopping-car/shopping-car",
-			"style": {
-				"navigationBarTitleText": "购物车"
+        },
+        {
+            "path" : "pages/set/set-address/set-address",
+            "style" : {
+				"navigationBarTitleText" : "收货地址"
 			}
-		},
-		{
-			"path": "pages/mine/mine",
-			"style": {
-				"navigationBarTitleText": "我的"
-			}
-		}
-	],
-	"globalStyle": {
-		"backgroundTextStyle": "light",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#66ffcc",
-		"navigationBarTextStyle": "white"
-	},
-	"tabBar": {
-    "color": "#ABABAB",
-    "selectedColor": "#00ff66",
-    "list": [
-      {
-        "selectedIconPath": "static/image/home2.png",
-        "iconPath": "static/image/home.png",
-        "pagePath": "pages/index/index",
-        "text": "主页"
-      },
-      {
-        "selectedIconPath": "static/image/mall2.png",
-        "iconPath": "static/image/mall.png",
-        "pagePath": "pages/mall/mall",
-        "text": "商城"
-      },
-      {
-        "selectedIconPath": "static/image/shoppingCar2.png",
-        "iconPath": "static/image/shoppingCar.png",
-        "pagePath": "pages/shopping-car/shopping-car",
-        "text": "购物车"
-      },
-      {
-        "selectedIconPath": "static/image/mine2.png",
-        "iconPath": "static/image/mine.png",
-        "pagePath": "pages/mine/mine",
-        "text": "我的"
-      }
-    ]
-  }
+        }
+    ],
+    "globalStyle" : {
+        "backgroundTextStyle" : "light",
+        "navigationBarTitleText" : "uni-app",
+        "navigationBarBackgroundColor" : "#66ffcc",
+        "navigationBarTextStyle" : "white"
+    },
+    "tabBar" : {
+        "color" : "#ABABAB",
+        "selectedColor" : "#00ff66",
+        "list" : [
+            {
+                "selectedIconPath" : "static/image/home2.png",
+                "iconPath" : "static/image/home.png",
+                "pagePath" : "pages/index/index",
+                "text" : "主页"
+            },
+            {
+                "selectedIconPath" : "static/image/mall2.png",
+                "iconPath" : "static/image/mall.png",
+                "pagePath" : "pages/mall/mall",
+                "text" : "商城"
+            },
+            {
+                "selectedIconPath" : "static/image/shoppingCar2.png",
+                "iconPath" : "static/image/shoppingCar.png",
+                "pagePath" : "pages/shopping-car/shopping-car",
+                "text" : "购物车"
+            },
+            {
+                "selectedIconPath" : "static/image/mine2.png",
+                "iconPath" : "static/image/mine.png",
+                "pagePath" : "pages/mine/mine",
+                "text" : "我的"
+            }
+        ]
+    }
 }

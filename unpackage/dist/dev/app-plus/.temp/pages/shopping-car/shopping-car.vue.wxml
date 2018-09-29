@@ -1,0 +1,29 @@
+<template name="73d3fdee">
+  <view class="_view data-v-3314fb38 page">
+    <view wx:key="index" key="{{index}}" class="_view data-v-3314fb38 shop-item" wx:for="{{shopList}}" wx:for-index="index" wx:for-item="item">
+      <checkbox-group bindchange="handleProxy" class="_checkbox-group data-v-3314fb38 check-box" data-index="{{index}}" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}">
+        <checkbox value="{{item.price * item.count}}" checked="{{checkedItem}}" class="_checkbox data-v-3314fb38"></checkbox>
+      </checkbox-group>
+      <image src="{{item.url}}" class="_image data-v-3314fb38 shop-img"></image>
+      <view class="_view data-v-3314fb38 shop-desc">
+        <text class="_text data-v-3314fb38 shop-title">{{item.name}}</text>
+        <view class="_view data-v-3314fb38 shop-action">
+          <text class="_text data-v-3314fb38 shop-price">￥{{item.price}}</text>
+          <button type="primary" size="mini" plain bindtap="handleProxy" data-index="{{index}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}" class="_button data-v-3314fb38">+</button>
+          <text class="_text data-v-3314fb38 shop-count">{{item.count}}</text>
+          <button type="primary" size="mini" plain bindtap="handleProxy" data-index="{{index}}" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}" class="_button data-v-3314fb38">-</button>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-3314fb38 blank"></view>
+    <view class="_view data-v-3314fb38 account">
+      <checkbox-group bindchange="handleProxy" class="_checkbox-group data-v-3314fb38 check-box" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+        <checkbox checked="{{checkedAll}}" class="_checkbox data-v-3314fb38"></checkbox>
+      </checkbox-group>
+      <text class="_text data-v-3314fb38 total">￥{{total}}</text>
+      <view class="_view data-v-3314fb38 pay">
+        <text class="_text data-v-3314fb38 pay-text">结 算</text>
+      </view>
+    </view>
+  </view>
+</template>

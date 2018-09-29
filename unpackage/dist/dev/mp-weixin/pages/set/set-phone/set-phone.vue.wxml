@@ -1,0 +1,13 @@
+<template name="5563e6fd">
+  <view class="_view data-v-73adbb42 page">
+    <input class="_input data-v-73adbb42 set-input first" value="{{phone}}" />
+    <view class="_view data-v-73adbb42 get-code">
+      <text class="_text data-v-73adbb42">获取验证码</text>
+    </view>
+    <input class="_input data-v-73adbb42 set-input" placeholder="验证码" />
+    <input class="_input data-v-73adbb42 set-input" placeholder="新绑定的手机号码" />
+    <view class="_view data-v-73adbb42 save-btn" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+      <text class="_text data-v-73adbb42">绑定</text>
+    </view>
+  </view>
+</template>

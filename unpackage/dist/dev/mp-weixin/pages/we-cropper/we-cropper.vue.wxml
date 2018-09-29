@@ -1,0 +1,7 @@
+<template name="f6dc0d2e">
+  <view class="_view data-v-920650f8 page">
+    <view class="_view data-v-920650f8 cropper-wrapper">
+      <canvas class="_canvas data-v-920650f8 cropper" disable-scroll="true" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" canvas-id="{{cropperOpt.id}}" style=" {{(  'width:' +  (cropperOpt.width + 'px') +  ';' +  'height:' +  (cropperOpt.height + 'px') +  ';')}}"></canvas>
+    </view>
+  </view>
+</template>
