@@ -30,7 +30,7 @@
 					uni.hideLoading();
 					uni.showToast({
 						icon: 'success',
-						title: '当前为最新版本!'
+						title: '当前为最新版本'
 					})
 				},2000)
 			}

@@ -35,8 +35,17 @@
   position: absolute;
   width: 160rpx;
   height: 160rpx;
-  top: 90rpx;
+  top: 60rpx;
   left: calc(50% - 80rpx);
+}
+.nick-name {
+  position: absolute;
+  display: block;
+  width: 100%;
+  text-align: center;
+  top: 230rpx;
+  color: white;
+  font-size: 32rpx;
 }
 .option {
   width: 100%;

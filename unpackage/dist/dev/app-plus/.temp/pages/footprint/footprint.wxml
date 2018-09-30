@@ -1,0 +1,1 @@
+<import src="/pages/footprint/footprint.vue.wxml" /><template is="1bb9e16f" data="{{ ...$root['0'], $root }}"/>

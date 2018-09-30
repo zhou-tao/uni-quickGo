@@ -4,8 +4,8 @@
 		<view class="get-code">
 			<text>获取验证码</text>
 		</view>
-		<input class="set-input" placeholder="验证码"/>
-		<input class="set-input" placeholder="新绑定的手机号码"/>
+		<input class="set-input" placeholder="验证码" placeholder-class="text-style"/>
+		<input class="set-input" placeholder="新绑定的手机号码" placeholder-class="text-style"/>
 		<view class="save-btn" @click="saveChangeName">
 			<text>绑定</text>
 		</view>
@@ -67,5 +67,10 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: 8upx;
+	}
+	
+	.text-style{
+		font-size: 32upx;
+		color:  #BABABA;
 	}
 </style>
