@@ -7,7 +7,7 @@
     <view class="_view data-v-b1a6e778 option first">
       <text class="_text data-v-b1a6e778 desc">功能介绍</text>
     </view>
-    <view class="_view data-v-b1a6e778 option" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-b1a6e778 option" bindtap="handleProxy" data-eventid="{{'ujy-0'}}" data-comkey="{{$k}}">
       <text class="_text data-v-b1a6e778 desc">检查更新</text>
     </view>
     <view class="_view data-v-b1a6e778 option">

@@ -40,6 +40,7 @@
 		align-items: center;
 		font-size: 70upx;
 		font-weight: 500;
+		color: #66FFCC;
 	}
 	
 	.option{

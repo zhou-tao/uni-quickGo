@@ -1,13 +1,13 @@
 <template name="57fb924d">
   <view class="_view data-v-4a968562 page">
     <view class="_view data-v-4a968562 menu">
-      <view class="_view data-v-4a968562 item {{[defaultActive ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+      <view class="_view data-v-4a968562 item {{[activeIndex == 1 ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'qi3-0'}}" data-comkey="{{$k}}">
         <text class="_text data-v-4a968562">全部</text>
       </view>
-      <view class="_view data-v-4a968562 item" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+      <view class="_view data-v-4a968562 item {{[activeIndex == 2 ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'ck6-1'}}" data-comkey="{{$k}}">
         <text class="_text data-v-4a968562">配送中</text>
       </view>
-      <view class="_view data-v-4a968562 item" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+      <view class="_view data-v-4a968562 item {{[activeIndex == 3 ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'88S-2'}}" data-comkey="{{$k}}">
         <text class="_text data-v-4a968562">已收货</text>
       </view>
     </view>

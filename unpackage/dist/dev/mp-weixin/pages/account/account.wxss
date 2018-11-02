@@ -29,6 +29,7 @@
   align-items: center;
   font-size: 70rpx;
   font-weight: 500;
+  color: #66FFCC;
 }
 .option {
   width: 100%;

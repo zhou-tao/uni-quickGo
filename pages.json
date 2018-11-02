@@ -56,12 +56,6 @@
             }
         },
         {
-            "path" : "pages/we-cropper/we-cropper",
-            "style" : {
-                "navigationBarTitleText" : "头像裁剪"
-            }
-        },
-        {
             "path" : "pages/set/set",
             "style" : {
                 "navigationBarTitleText" : "个人设置"
@@ -70,20 +64,26 @@
         {
             "path" : "pages/set/set-name/set-name",
             "style" : {
-				"navigationBarTitleText" : "更换昵称"
-			}
+                "navigationBarTitleText" : "更换昵称"
+            }
         },
         {
             "path" : "pages/set/set-phone/set-phone",
             "style" : {
-				"navigationBarTitleText" : "绑定手机"
-			}
+                "navigationBarTitleText" : "绑定手机"
+            }
         },
         {
             "path" : "pages/set/set-address/set-address",
             "style" : {
-				"navigationBarTitleText" : "收货地址"
-			}
+                "navigationBarTitleText" : "收货地址"
+            }
+        },
+        {
+            "path" : "pages/goods/goods",
+            "style" : {
+                "navigationBarTitleText" : "商品详情"
+            }
         }
     ],
     "globalStyle" : {

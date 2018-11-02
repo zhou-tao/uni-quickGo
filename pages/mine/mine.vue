@@ -49,8 +49,9 @@
 					sizeType : ['compressed '],
 					success : function(res){
 						let tempFilePath = res.tempFilePaths[0];
+						that.src = tempFilePath;
 // 						uni.navigateTo({
-// 							url : '/pages/we-cropper/we-cropper?src=' + tempFilePath
+// 							url : '/pages/head-cut/head-cut?src=' + tempFilePath
 // 						})
 					}
 				})
@@ -114,6 +115,7 @@
 		height: 160upx;
 		top: 60upx;
 		left: calc(50% - 80upx);
+		border-radius: 50%;
 	}
 	
 	.nick-name{

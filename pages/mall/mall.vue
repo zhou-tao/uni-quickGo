@@ -1,23 +1,23 @@
 <template>
 	<view class="page">
 		<view class="menu">
-			<view class="item" v-bind:class="{activeClass: defaultActive}" @click="changeType(1)">
+			<view class="item" v-bind:class="{activeClass: (activeIndex == 1)}" @click="changeType(1)">
 				<text>全部</text>
 			</view>
-			<view class="item" @click="changeType(2)">
+			<view class="item" v-bind:class="{activeClass: (activeIndex == 2)}" @click="changeType(2)">
 				<text>电脑</text>
 			</view>
-			<view class="item" @click="changeType(3)">
+			<view class="item" v-bind:class="{activeClass: (activeIndex == 3)}" @click="changeType(3)">
 				<text>手机</text>
 			</view>
-			<view class="item" @click="changeType(4)">
+			<view class="item" v-bind:class="{activeClass: (activeIndex == 4)}" @click="changeType(4)">
 				<text>ipad</text>
 			</view>
-			<view class="item" @click="changeType(5)">
+			<view class="item" v-bind:class="{activeClass: (activeIndex == 5)}" @click="changeType(5)">
 				<text>其他</text>
 			</view>
 		</view>
-		<view v-for="(product,index) in productList" :key="index">
+		<view v-for="(product,index) in productList" :key="index" @click="toGoods">
 			<product :image="product.image" :title="product.title" :originalPrice="product.originalPrice" :favourPrice="product.favourPrice"
 				:tip="product.tip"></product>
 		</view>
@@ -30,7 +30,7 @@
 		data() {
 			return {
 				productList: [],
-				defaultActive: true,     //默认高亮全部item
+				activeIndex: 1,     //默认高亮全部item
 				data: [{
 					image: 'https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product1.jpg',
 					title: 'Apple iPhone X 256GB 深空灰色 移动联通电信4G手机',
@@ -82,8 +82,13 @@
 		methods: {
 			changeType(index){
 				//取消默认高亮
-				this.defaultActive = false;
+				this.activeIndex = index;
 				this.productList = (index == 1) ? this.data : this.data.filter(item => item.type == index);
+			},
+			toGoods(){
+				uni.navigateTo({
+					url : '/pages/goods/goods'
+				})
 			}
 		},
 		onLoad() {
@@ -113,12 +118,6 @@
 	
 	.item:active{
 		background: #EBEBEB;
-	}
-	
-	.item:hover{
-		border-bottom: solid 8upx #66ffcc;
-		box-sizing: border-box;
-		color: #66FFCC;
 	}
 	
 	.activeClass{

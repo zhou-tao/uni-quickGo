@@ -12,7 +12,7 @@
 			<text class="content">推荐商品</text>
 			<view class="line"></view>
 		</view>
-		<view v-for="(product,index) in productList" :key="index">
+		<view v-for="(product,index) in productList" :key="index" @click="toGoods">
 			<product :image="product.image" :title="product.title" :originalPrice="product.originalPrice" :favourPrice="product.favourPrice"
 				:tip="product.tip"></product>
 		</view>
@@ -83,6 +83,11 @@
 				data.forEach(item => {
 					this.productList.push(item);
 				});
+			},
+			toGoods(){
+				uni.navigateTo({
+					url : '/pages/goods/goods'
+				})
 			}
 		},
 		onLoad() {

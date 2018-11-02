@@ -1,13 +1,13 @@
 <template>
 	<view class="page">
 		<view class="menu">
-			<view class="item" v-bind:class="{activeClass: defaultActive}" @click="changeType(1)">
+			<view class="item" v-bind:class="{activeClass: (activeIndex == 1)}" @click="changeType(1)">
 				<text>全部</text>
 			</view>
-			<view class="item" @click="changeType(2)">
+			<view class="item" v-bind:class="{activeClass: (activeIndex == 2)}" @click="changeType(2)">
 				<text>配送中</text>
 			</view>
-			<view class="item" @click="changeType(3)">
+			<view class="item" v-bind:class="{activeClass: (activeIndex == 3)}" @click="changeType(3)">
 				<text>已收货</text>
 			</view>
 		</view>
@@ -18,13 +18,13 @@
 	export default {
 		data(){
 			return{
-				defaultActive: true     //默认高亮全部item
+				activeIndex: 1     //默认高亮全部item
 			}
 		},
 		methods : {
 			changeType(index){
 				//取消默认高亮
-				this.defaultActive = false;
+				this.activeIndex = index;
 			}
 		}
 	}
@@ -51,12 +51,6 @@
 	
 	.item:active{
 		background: #EBEBEB;
-	}
-	
-	.item:hover{
-		border-bottom: solid 8upx #66ffcc;
-		box-sizing: border-box;
-		color: #66FFCC;
 	}
 	
 	.activeClass{
