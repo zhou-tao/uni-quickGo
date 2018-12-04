@@ -17,7 +17,7 @@
 		</view>
 		<view class="option" @click="pickAddress">
 			<text class="desc">收货地址</text>
-			<text class="info"></text>
+			<text class="info">已设置</text>
 			<image src="../../static/image/more.png" class="more"></image>
 		</view>
 	</view>

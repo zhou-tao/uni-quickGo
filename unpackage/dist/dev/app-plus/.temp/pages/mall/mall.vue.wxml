@@ -2,24 +2,24 @@
 <template name="1e7ee729">
   <view class="_view data-v-72fa08f8 page">
     <view class="_view data-v-72fa08f8 menu">
-      <view class="_view data-v-72fa08f8 item {{[defaultActive ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+      <view class="_view data-v-72fa08f8 item {{[activeIndex == 1 ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'ju3-0'}}" data-comkey="{{$k}}">
         <text class="_text data-v-72fa08f8">全部</text>
       </view>
-      <view class="_view data-v-72fa08f8 item" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+      <view class="_view data-v-72fa08f8 item {{[activeIndex == 2 ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'azi-1'}}" data-comkey="{{$k}}">
         <text class="_text data-v-72fa08f8">电脑</text>
       </view>
-      <view class="_view data-v-72fa08f8 item" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+      <view class="_view data-v-72fa08f8 item {{[activeIndex == 3 ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'WTe-2'}}" data-comkey="{{$k}}">
         <text class="_text data-v-72fa08f8">手机</text>
       </view>
-      <view class="_view data-v-72fa08f8 item" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+      <view class="_view data-v-72fa08f8 item {{[activeIndex == 4 ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'INP-3'}}" data-comkey="{{$k}}">
         <text class="_text data-v-72fa08f8">ipad</text>
       </view>
-      <view class="_view data-v-72fa08f8 item" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">
+      <view class="_view data-v-72fa08f8 item {{[activeIndex == 5 ? 'activeClass' : '']}}" bindtap="handleProxy" data-eventid="{{'0A5-4'}}" data-comkey="{{$k}}">
         <text class="_text data-v-72fa08f8">其他</text>
       </view>
     </view>
-    <view wx:key="index" key="{{index}}" wx:for="{{productList}}" wx:for-index="index" wx:for-item="product" class="_view data-v-72fa08f8">
-      <template data="{{...$root[$kk+'0-'+index], $root}}" is="b835c958"></template>
+    <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-index="{{index}}" data-eventid="{{'LgF-5-'+index}}" data-comkey="{{$k}}" wx:for="{{productList}}" wx:for-index="index" wx:for-item="product" class="_view data-v-72fa08f8">
+      <template data="{{...$root['0'], ...$root[$kk+'fwR-0-'+index],$root}}" is="b835c958"></template>
     </view>
   </view>
 </template>

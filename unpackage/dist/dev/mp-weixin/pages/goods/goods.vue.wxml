@@ -1,3 +1,52 @@
 <template name="1ad2045d">
-  <view class="_view data-v-0d6cf772"></view>
+  <view class="_view data-v-0d6cf772 page">
+    <view class="_view data-v-0d6cf772 swipper-content">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-active-color="#ffffff" class="_swiper data-v-0d6cf772 swipper-content">
+        <swiper-item class="_swiper-item data-v-0d6cf772">
+          <image src="{{goods.image}}" class="_image data-v-0d6cf772 swipper-img"></image>
+        </swiper-item>
+        <swiper-item class="_swiper-item data-v-0d6cf772">
+          <image src="{{goods.image}}" class="_image data-v-0d6cf772 swipper-img"></image>
+        </swiper-item>
+        <swiper-item class="_swiper-item data-v-0d6cf772">
+          <image src="{{goods.image}}" class="_image data-v-0d6cf772 swipper-img"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="_view data-v-0d6cf772 item fuck">
+      <text class="_text data-v-0d6cf772 title">{{goods.title}}</text>
+    </view>
+    <view class="_view data-v-0d6cf772 item limit">
+      <text class="_text data-v-0d6cf772">零售价</text>
+      <text class="_text data-v-0d6cf772">{{goods.originalPrice}} 元</text>
+    </view>
+    <view class="_view data-v-0d6cf772 item limit">
+      <text class="_text data-v-0d6cf772">优惠价</text>
+      <text class="_text data-v-0d6cf772">{{goods.favourPrice}} 元</text>
+    </view>
+    <view class="_view data-v-0d6cf772 item limit">
+      <text class="_text data-v-0d6cf772">规格</text>
+      <text class="_text data-v-0d6cf772">{{goods.size}}</text>
+    </view>
+    <view class="_view data-v-0d6cf772 blank"></view>
+    <view class="_view data-v-0d6cf772 footer">
+      <view class="_view data-v-0d6cf772 count">
+        <view class="_view data-v-0d6cf772 add">
+          <text class="_text data-v-0d6cf772 center" bindtap="handleProxy" data-eventid="{{'jmP-0'}}" data-comkey="{{$k}}">+</text>
+        </view>
+        <text class="_text data-v-0d6cf772 number">{{goods.count}}</text>
+        <view class="_view data-v-0d6cf772 add">
+          <text class="_text data-v-0d6cf772 center" bindtap="handleProxy" data-eventid="{{'ay9-1'}}" data-comkey="{{$k}}">-</text>
+        </view>
+      </view>
+      <view class="_view data-v-0d6cf772 submit">
+        <view class="_view data-v-0d6cf772 action" bindtap="handleProxy" data-eventid="{{'pM3-2'}}" data-comkey="{{$k}}">
+          <text class="_text data-v-0d6cf772">加入购物车</text>
+        </view>
+        <view class="_view data-v-0d6cf772 action buy" bindtap="handleProxy" data-eventid="{{'GS3-3'}}" data-comkey="{{$k}}">
+          <text space="ensp" class="_text data-v-0d6cf772">立即购买 </text>
+        </view>
+      </view>
+    </view>
+  </view>
 </template>

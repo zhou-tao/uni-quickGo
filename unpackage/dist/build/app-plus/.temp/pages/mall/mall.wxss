@@ -1,0 +1,2 @@
+@import "../../common/vendor.wxss";
+.page{width:100%;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-align-content:flex-start;align-content:flex-start}.menu{width:100%;background:#b8b8b8}.item,.menu{height:100rpx}.item{display:inline-block;width:20%;text-align:center;line-height:100rpx;color:#fff;font-size:32rpx}.item:active{background:#ebebeb}.activeClass{border-bottom:8rpx solid #6fc;box-sizing:border-box;color:#6fc}

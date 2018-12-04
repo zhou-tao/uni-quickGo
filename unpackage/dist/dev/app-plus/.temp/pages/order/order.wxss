@@ -30,13 +30,77 @@
 .item:active {
   background: #EBEBEB;
 }
-.item:hover {
-  border-bottom: solid 8rpx #66ffcc;
-  box-sizing: border-box;
-  color: #66FFCC;
-}
 .activeClass {
   border-bottom: solid 8rpx #66ffcc;
   box-sizing: border-box;
   color: #66FFCC;
+}
+.shop-item {
+  width: 100%;
+  height: 240rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  border-bottom: solid 5rpx #EDEDED;
+}
+.shop-img {
+  height: 100%;
+  width: 240rpx;
+  margin-left: 30rpx;
+}
+.shop-desc {
+  width: 360rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  margin-left: 8rpx;
+}
+.shop-title {
+  width: 360rpx;
+  color: #666666;
+  font-size: 32rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.shop-action {
+  width: 360rpx;
+  line-height: 60rpx;
+  margin-top: 26rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.shop-price {
+  color: #E80080;
+  font-size: 34rpx;
+}
+.count-png {
+  margin-left: 130rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.count-desc {
+  margin-left: 2rpx;
+  top: 2rpx;
+  font-size: 36rpx;
+  color: #66ffcc;
 }

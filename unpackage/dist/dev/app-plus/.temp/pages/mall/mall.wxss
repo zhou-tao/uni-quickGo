@@ -30,11 +30,6 @@
 .item:active {
   background: #EBEBEB;
 }
-.item:hover {
-  border-bottom: solid 8rpx #66ffcc;
-  box-sizing: border-box;
-  color: #66FFCC;
-}
 .activeClass {
   border-bottom: solid 8rpx #66ffcc;
   box-sizing: border-box;

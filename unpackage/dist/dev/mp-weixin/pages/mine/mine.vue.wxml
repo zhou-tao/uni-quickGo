@@ -2,27 +2,27 @@
   <view class="_view data-v-2a105ae4 page">
     <view class="_view data-v-2a105ae4 header">
       <image src="../../static/image/mine-banner.jpg" class="_image data-v-2a105ae4 banner"></image>
-      <image src="../../static/image/set.png" class="_image data-v-2a105ae4 set-png" bindtap="handleProxy" data-eventid="{{'4nQ-0'}}" data-comkey="{{$k}}"></image>
-      <image src="{{src ? src : '../../static/image/default-headPic.png'}}" class="_image data-v-2a105ae4 head-portrait" bindtap="handleProxy" data-eventid="{{'jxi-1'}}" data-comkey="{{$k}}"></image>
+      <image src="../../static/image/set.png" class="_image data-v-2a105ae4 set-png" bindtap="handleProxy" data-eventid="{{'SZ1-0'}}" data-comkey="{{$k}}"></image>
+      <image src="{{src ? src : '../../static/image/default-headPic.png'}}" class="_image data-v-2a105ae4 head-portrait" bindtap="handleProxy" data-eventid="{{'QJ5-1'}}" data-comkey="{{$k}}"></image>
       <text class="_text data-v-2a105ae4 nick-name">尤尼</text>
     </view>
-    <view class="_view data-v-2a105ae4 option first" bindtap="handleProxy" data-eventid="{{'IYQ-2'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-2a105ae4 option first" bindtap="handleProxy" data-eventid="{{'1An-2'}}" data-comkey="{{$k}}">
       <image src="../../static/image/count.png" class="_image data-v-2a105ae4 option-img"></image>
       <text class="_text data-v-2a105ae4 desc">我的账户</text>
     </view>
-    <view class="_view data-v-2a105ae4 option" bindtap="handleProxy" data-eventid="{{'ZK8-3'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-2a105ae4 option" bindtap="handleProxy" data-eventid="{{'n8u-3'}}" data-comkey="{{$k}}">
       <image src="../../static/image/order.png" class="_image data-v-2a105ae4 option-img bigger"></image>
       <text class="_text data-v-2a105ae4 desc">我的订单</text>
     </view>
-    <view class="_view data-v-2a105ae4 option" bindtap="handleProxy" data-eventid="{{'bqv-4'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-2a105ae4 option" bindtap="handleProxy" data-eventid="{{'3Wt-4'}}" data-comkey="{{$k}}">
       <image src="../../static/image/foot.png" class="_image data-v-2a105ae4 option-img bigger"></image>
       <text class="_text data-v-2a105ae4 desc">我的足迹</text>
     </view>
-    <view class="_view data-v-2a105ae4 option" bindtap="handleProxy" data-eventid="{{'2pM-5'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-2a105ae4 option" bindtap="handleProxy" data-eventid="{{'Suz-5'}}" data-comkey="{{$k}}">
       <image src="../../static/image/advice.png" class="_image data-v-2a105ae4 option-img"></image>
       <text class="_text data-v-2a105ae4 desc">意见反馈</text>
     </view>
-    <view class="_view data-v-2a105ae4 option" bindtap="handleProxy" data-eventid="{{'I9H-6'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-2a105ae4 option" bindtap="handleProxy" data-eventid="{{'hIU-6'}}" data-comkey="{{$k}}">
       <image src="../../static/image/about.png" class="_image data-v-2a105ae4 option-img"></image>
       <text class="_text data-v-2a105ae4 desc">关于我们</text>
     </view>

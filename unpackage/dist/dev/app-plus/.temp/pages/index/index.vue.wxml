@@ -13,8 +13,8 @@
       <text class="_text data-v-0c8c516a content">推荐商品</text>
       <view class="_view data-v-0c8c516a line"></view>
     </view>
-    <view wx:key="index" key="{{index}}" wx:for="{{productList}}" wx:for-index="index" wx:for-item="product" class="_view data-v-0c8c516a">
-      <template data="{{...$root[$kk+'1-'+index], $root}}" is="b835c958"></template>
+    <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-index="{{index}}" data-eventid="{{'8dH-0-'+index}}" data-comkey="{{$k}}" wx:for="{{productList}}" wx:for-index="index" wx:for-item="product" class="_view data-v-0c8c516a">
+      <template data="{{...$root['0'], ...$root[$kk+'DW3-1-'+index],$root}}" is="b835c958"></template>
     </view>
   </view>
 </template>

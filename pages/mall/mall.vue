@@ -17,7 +17,7 @@
 				<text>其他</text>
 			</view>
 		</view>
-		<view v-for="(product,index) in productList" :key="index" @click="toGoods">
+		<view v-for="(product,index) in productList" :key="index" @click="toGoods" :data-index="index">
 			<product :image="product.image" :title="product.title" :originalPrice="product.originalPrice" :favourPrice="product.favourPrice"
 				:tip="product.tip"></product>
 		</view>
@@ -85,9 +85,10 @@
 				this.activeIndex = index;
 				this.productList = (index == 1) ? this.data : this.data.filter(item => item.type == index);
 			},
-			toGoods(){
+			toGoods(e){
+				let index = e.currentTarget.dataset.index;
 				uni.navigateTo({
-					url : '/pages/goods/goods'
+					url : '/pages/goods/goods?index=' + index
 				})
 			}
 		},

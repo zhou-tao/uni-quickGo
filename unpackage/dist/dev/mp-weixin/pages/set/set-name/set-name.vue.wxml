@@ -1,7 +1,7 @@
 <template name="77631422">
   <view class="_view data-v-2fc10ed7 page">
-    <input class="_input data-v-2fc10ed7 set-input" value="{{name}}" bindinput="handleProxy" data-eventid="{{'GLS-0'}}" data-comkey="{{$k}}" />
-    <view class="_view data-v-2fc10ed7 save-btn" bindtap="handleProxy" data-eventid="{{'3W8-1'}}" data-comkey="{{$k}}">
+    <input class="_input data-v-2fc10ed7 set-input" value="{{name}}" bindinput="handleProxy" data-eventid="{{'pGv-0'}}" data-comkey="{{$k}}" />
+    <view class="_view data-v-2fc10ed7 save-btn" bindtap="handleProxy" data-eventid="{{'y8n-1'}}" data-comkey="{{$k}}">
       <text class="_text data-v-2fc10ed7">保存</text>
     </view>
   </view>

@@ -1,8 +1,8 @@
 <template name="6db6bd49">
   <view class="_view data-v-1f8e2824 page">
     <view class="_view data-v-1f8e2824 feedback-body">
-      <textarea placeholder="请输入您宝贵的意见与建议~" class="_textarea data-v-1f8e2824 content" placeholder-class="tips" bindinput="handleProxy" data-eventid="{{'c6I-0'}}" data-comkey="{{$k}}" />
-      <button class="_button data-v-1f8e2824 submit" bindtap="handleProxy" data-eventid="{{'PzM-1'}}" data-comkey="{{$k}}">提交</button>
+      <textarea placeholder="请输入您宝贵的意见与建议~" class="_textarea data-v-1f8e2824 content" placeholder-class="tips" bindinput="handleProxy" data-eventid="{{'GB1-0'}}" data-comkey="{{$k}}" />
+      <button class="_button data-v-1f8e2824 submit" bindtap="handleProxy" data-eventid="{{'gkJ-1'}}" data-comkey="{{$k}}">提交</button>
     </view>
   </view>
 </template>

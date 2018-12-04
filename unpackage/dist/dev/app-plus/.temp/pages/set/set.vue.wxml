@@ -1,23 +1,23 @@
 <template name="23e91575">
   <view class="_view data-v-10f00bca page">
-    <view class="_view data-v-10f00bca option" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-10f00bca option" bindtap="handleProxy" data-eventid="{{'Sot-0'}}" data-comkey="{{$k}}">
       <text class="_text data-v-10f00bca desc">昵称</text>
       <text class="_text data-v-10f00bca info">{{nickName}}</text>
       <image src="../../static/image/more.png" class="_image data-v-10f00bca more"></image>
     </view>
-    <view class="_view data-v-10f00bca option" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-10f00bca option" bindtap="handleProxy" data-eventid="{{'8ao-1'}}" data-comkey="{{$k}}">
       <text class="_text data-v-10f00bca desc">性别</text>
       <text class="_text data-v-10f00bca info">{{gender == 1 ? '男' : '女'}}</text>
       <image src="../../static/image/more.png" class="_image data-v-10f00bca more"></image>
     </view>
-    <view class="_view data-v-10f00bca option end" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-10f00bca option end" bindtap="handleProxy" data-eventid="{{'ORM-2'}}" data-comkey="{{$k}}">
       <text class="_text data-v-10f00bca desc">手机号码</text>
       <text class="_text data-v-10f00bca info">{{phone}}</text>
       <image src="../../static/image/more.png" class="_image data-v-10f00bca more"></image>
     </view>
-    <view class="_view data-v-10f00bca option" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-10f00bca option" bindtap="handleProxy" data-eventid="{{'sBh-3'}}" data-comkey="{{$k}}">
       <text class="_text data-v-10f00bca desc">收货地址</text>
-      <text class="_text data-v-10f00bca info"></text>
+      <text class="_text data-v-10f00bca info">已设置</text>
       <image src="../../static/image/more.png" class="_image data-v-10f00bca more"></image>
     </view>
   </view>

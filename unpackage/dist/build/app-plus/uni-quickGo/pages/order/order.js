@@ -1,0 +1,13 @@
+
+      !(function(){
+        var uniAppViewReadyCallback = function(){
+          setCssToHead([[2,1],".",[1],"page{width:100%;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-align-content:flex-start;align-content:flex-start}\n.",[1],"menu{width:100%;background:#b8b8b8}\n.",[1],"item,.",[1],"menu{height:",[0,100],"}\n.",[1],"item{display:inline-block;width:33.3%;text-align:center;line-height:",[0,100],";color:#fff;font-size:",[0,32],"}\n.",[1],"item:active{background:#ebebeb}\n.",[1],"activeClass{border-bottom:",[0,8]," solid #6fc;box-sizing:border-box;color:#6fc}\n.",[1],"shop-item{width:100%;height:",[0,240],";-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:",[0,30]," ",[0,20],";border-bottom:",[0,5]," solid #ededed}\n.",[1],"shop-img{height:100%;width:",[0,240],";margin-left:",[0,30],"}\n.",[1],"shop-desc{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;margin-left:",[0,8],"}\n.",[1],"shop-desc,.",[1],"shop-title{width:",[0,360],";-webkit-box-orient:vertical}\n.",[1],"shop-title{color:#666;font-size:",[0,32],";word-break:break-all;display:-webkit-box;overflow:hidden;text-overflow:ellipsis;-webkit-line-clamp:2}\n.",[1],"shop-action{width:",[0,360],";line-height:",[0,60],";margin-top:",[0,26],";display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between}\n.",[1],"shop-price{color:#e80080;font-size:",[0,34],"}\n.",[1],"count-png{margin-left:",[0,130],";width:",[0,50],";height:",[0,50],"}\n.",[1],"count-desc{margin-left:",[0,2],";top:",[0,2],";font-size:",[0,36],";color:#6fc}\n",],undefined,{path:"./pages/order/order.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/order/order.wxml') } }));
+        }
+        if(window.__uniAppViewReady__){
+          uniAppViewReadyCallback()
+        }else{
+          document.addEventListener('uniAppViewReady',uniAppViewReadyCallback)
+        }
+      })();
+      

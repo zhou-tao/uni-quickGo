@@ -21,7 +21,7 @@
 				<checkbox :checked="checkedAll"></checkbox>
 			</checkbox-group>
 			<text class="total">￥{{total}}</text>
-			<view class="pay">
+			<view class="pay" @click="buy">
 				<text class="pay-text">结 算</text>
 			</view>
 		</view>
@@ -67,11 +67,30 @@
 			}
 		},
 		methods: {
+			//购买
+			buy(){
+				if(this.total == 0){
+					uni.showToast({
+						icon : 'none',
+						title : '请选择本次购买的商品'
+					})
+					return;
+				}
+				uni.showLoading({
+					title : '请稍后...'
+				})
+				setTimeout(() => {
+					uni.hideLoading();
+					uni.showToast({
+						title : '购买成功'
+					})
+				},1500);
+			},
 			//去商品详情
 			toGoods(e){
 				let index = e.currentTarget.dataset.index;
 				uni.navigateTo({
-					url : '/pages/goods/goods'
+					url : '/pages/goods/goods?index=' + index
 				})
 			},
 			//长按商品从购物车移除

@@ -37,6 +37,7 @@
   height: 160rpx;
   top: 60rpx;
   left: calc(50% - 80rpx);
+  border-radius: 50%;
 }
 .nick-name {
   position: absolute;

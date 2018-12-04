@@ -12,7 +12,7 @@
 			<text class="content">推荐商品</text>
 			<view class="line"></view>
 		</view>
-		<view v-for="(product,index) in productList" :key="index" @click="toGoods">
+		<view v-for="(product,index) in productList" :key="index" @click="toGoods" :data-index="index">
 			<product :image="product.image" :title="product.title" :originalPrice="product.originalPrice" :favourPrice="product.favourPrice"
 				:tip="product.tip"></product>
 		</view>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+	
 	import product from '../../components/product.vue';
 	export default {
 		data: {
@@ -84,9 +85,10 @@
 					this.productList.push(item);
 				});
 			},
-			toGoods(){
+			toGoods(e){
+				let index = e.currentTarget.dataset.index;
 				uni.navigateTo({
-					url : '/pages/goods/goods'
+					url : '/pages/goods/goods?index=' + index
 				})
 			}
 		},
@@ -103,7 +105,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	@import '../../utils/css/page.css';
 	
 	.swipper-content {

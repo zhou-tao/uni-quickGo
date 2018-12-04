@@ -1,3 +1,23 @@
 <template name="6014416e">
-  <view class="_view data-v-fbe94e2a"></view>
+  <view class="_view data-v-fbe94e2a page">
+    <view class="_view data-v-fbe94e2a map">
+      <map latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" class="_map data-v-fbe94e2a map"></map>
+    </view>
+    <scroll-view scroll-y="true" class="_scroll-view data-v-fbe94e2a near-address">
+      <view class="_view data-v-fbe94e2a item" wx:key="item.id" key="{{item.id}}" bindtap="handleProxy" data-name="{{item.name}}" data-eventid="{{'ob4-0-'+index}}" data-comkey="{{$k}}" wx:for="{{nearData}}" wx:for-index="index" wx:for-item="item">
+        <view class="_view data-v-fbe94e2a flag">
+          <image src="../../../static/image/point-c.png" class="_image data-v-fbe94e2a point" wx:if="{{index == 0}}"></image>
+          <image src="../../../static/image/point.png" class="_image data-v-fbe94e2a point" wx:else></image>
+        </view>
+        <view class="_view data-v-fbe94e2a address">
+          <view class="_view data-v-fbe94e2a name">
+            <text class="_text data-v-fbe94e2a">{{item.name}}</text>
+          </view>
+          <view class="_view data-v-fbe94e2a desc">
+            <text class="_text data-v-fbe94e2a desc-word">{{item.address}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
 </template>
