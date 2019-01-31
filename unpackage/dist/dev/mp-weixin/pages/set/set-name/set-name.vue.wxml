@@ -1,8 +1,1 @@
-<template name="77631422">
-  <view class="_view data-v-2fc10ed7 page">
-    <input class="_input data-v-2fc10ed7 set-input" value="{{name}}" bindinput="handleProxy" data-eventid="{{'pGv-0'}}" data-comkey="{{$k}}" />
-    <view class="_view data-v-2fc10ed7 save-btn" bindtap="handleProxy" data-eventid="{{'y8n-1'}}" data-comkey="{{$k}}">
-      <text class="_text data-v-2fc10ed7">保存</text>
-    </view>
-  </view>
-</template>
+<template name="75be966c"><view class="_view 75be966c page"><input class="_input 75be966c set-input" value="{{name}}" bindinput="handleProxy" data-eventid="{{'75be966c-0'}}" data-comkey="{{$k}}" /><view class="_view 75be966c save-btn" bindtap="handleProxy" data-eventid="{{'75be966c-1'}}" data-comkey="{{$k}}"><text class="_text 75be966c">保存</text></view></view></template>

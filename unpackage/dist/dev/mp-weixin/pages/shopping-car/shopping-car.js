@@ -1,4 +1,443 @@
-require("../../common/manifest.js");
-require("../../common/vendor.js");
-global.webpackJsonp([2],{22:function(t,e,s){"use strict";var i=c(s(1)),o=c(s(23));function c(t){return t&&t.__esModule?t:{default:t}}new i.default(o.default).$mount()},23:function(t,e,s){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var i=s(25),o=s.n(i),c=s(26),n=!1;var a=function(t){n||s(24)},l=s(0)(o.a,c.a,a,null,null);l.options.__file="..\\..\\..\\workspace\\uni-quickGo\\pages\\shopping-car\\shopping-car.vue",l.esModule&&Object.keys(l.esModule).some(function(t){return"default"!==t&&"__"!==t.substr(0,2)})&&console.error("named exports are not supported in *.vue files."),l.options.functional&&console.error("[vue-loader] shopping-car.vue: functional components are not supported with templates, they should use render functions."),e.default=l.exports},24:function(t,e){},25:function(t,e,s){"use strict";(function(t){Object.defineProperty(e,"__esModule",{value:!0}),e.default={data:function(){return{total:0,checkedAll:!1,shopList:[{url:"https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product1.jpg",name:"Apple iPhone X 256GB 深空灰色 移动联通电信4G手机",price:8888,count:1,selected:!1},{url:"https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product2.jpg",name:"Apple iPad 平板电脑 2018年新款9.7英寸",price:3399,count:1,selected:!1},{url:"https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product4.jpg",name:"Kindle Paperwhite电纸书阅读器 电子书墨水屏 6英寸wifi 黑色",price:958,count:2,selected:!1},{url:"https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product6.jpg",name:"Apple Watch Series 3智能手表（GPS款 42毫米 深空灰色铝金属表壳 黑色运动型表带 MQL12CH/A）",price:2799,count:1,selected:!1}]}},methods:{buy:function(){0!=this.total?(t.showLoading({title:"请稍后..."}),setTimeout(function(){t.hideLoading(),t.showToast({title:"购买成功"})},1500)):t.showToast({icon:"none",title:"请选择本次购买的商品"})},toGoods:function(e){var s=e.currentTarget.dataset.index;t.navigateTo({url:"/pages/goods/goods?index="+s})},deleteShopItem:function(e){var s=this,i=e.currentTarget.dataset.index;t.showModal({title:"提示",content:"确定将本商品从购物车移除吗?",confirmColor:"#EE6A50",success:function(t){t.confirm?s.shopList.splice(i,1):console.log("取消移除")}})},selectShops:function(t){this.checkedAll=!this.checkedAll;var e=0;this.checkedAll?this.shopList.forEach(function(t,s){e+=t.count*t.price,t.selected=!0}):this.shopList.forEach(function(t,s){e=0,t.selected=!1}),this.total=e},selectShopItem:function(t){var e=t.currentTarget.dataset.index;this.shopList[e].selected=!this.shopList[e].selected,this.shopList[e].selected?this.total+=this.shopList[e].price*this.shopList[e].count:this.total-=this.shopList[e].price*this.shopList[e].count},addCount:function(t){var e=t.currentTarget.dataset.index;this.shopList[e].count++,this.shopList[e].selected&&(this.total+=this.shopList[e].price)},reduceCount:function(t){var e=t.currentTarget.dataset.index;this.shopList[e].count>1&&(this.shopList[e].count--,this.shopList[e].selected&&(this.total-=this.shopList[e].price))}}}}).call(e,s(2).default)},26:function(t,e,s){"use strict";var i=function(){var t=this,e=t.$createElement,s=t._self._c||e;return s("view",{staticClass:"page"},[t._l(t.shopList,function(e,i){return s("view",{key:i,staticClass:"shop-item",attrs:{"data-index":i,eventid:"Uq6-3-"+i},on:{click:t.toGoods,longpress:t.deleteShopItem}},[s("checkbox-group",{staticClass:"check-box",attrs:{"data-index":i,eventid:"zoR-0-"+i,mpcomid:"cme-0-"+i},on:{change:t.selectShopItem,click:function(t){t.stopPropagation()}}},[s("checkbox",{attrs:{value:e.price*e.count,checked:e.selected}})],1),s("image",{staticClass:"shop-img",attrs:{src:e.url}}),s("view",{staticClass:"shop-desc"},[s("text",{staticClass:"shop-title"},[t._v(t._s(e.name))]),s("view",{staticClass:"shop-action"},[s("text",{staticClass:"shop-price"},[t._v("￥"+t._s(e.price))]),s("button",{attrs:{type:"primary",size:"mini",plain:"","data-index":i,eventid:"qUE-1-"+i},on:{click:function(e){e.stopPropagation(),t.addCount(e)}}},[t._v("+")]),s("text",{staticClass:"shop-count"},[t._v(t._s(e.count))]),s("button",{attrs:{type:"primary",size:"mini",plain:"","data-index":i,eventid:"356-2-"+i},on:{click:function(e){e.stopPropagation(),t.reduceCount(e)}}},[t._v("-")])],1)])],1)}),s("view",{staticClass:"blank"}),s("view",{staticClass:"account"},[s("checkbox-group",{staticClass:"check-box",attrs:{eventid:"bWh-4",mpcomid:"BEp-1"},on:{change:t.selectShops}},[s("checkbox",{attrs:{checked:t.checkedAll}})],1),s("text",{staticClass:"total"},[t._v("￥"+t._s(t.total))]),s("view",{staticClass:"pay",attrs:{eventid:"DZT-5"},on:{click:t.buy}},[s("text",{staticClass:"pay-text"},[t._v("结 算")])])],1)],2)};i._withStripped=!0;var o={render:i,staticRenderFns:[]};e.a=o}},[22]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/shopping-car/shopping-car"],{
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/main.js?{\"page\":\"pages%2Fshopping-car%2Fshopping-car\"}":
+/*!***********************************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/main.js?{"page":"pages%2Fshopping-car%2Fshopping-car"} ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+__webpack_require__(/*! uni-pages */ "../../../../workspace/uni-app/uni-quickGo/pages.json");
+var _mpvuePageFactory = _interopRequireDefault(__webpack_require__(/*! mpvue-page-factory */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mpvue-page-factory/index.js"));
+var _shoppingCar = _interopRequireDefault(__webpack_require__(/*! ./pages/shopping-car/shopping-car.vue */ "../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Page((0, _mpvuePageFactory.default)(_shoppingCar.default));
+
+/***/ }),
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue":
+/*!****************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _shopping_car_vue_vue_type_template_id_0030706a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shopping-car.vue?vue&type=template&id=0030706a& */ "../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=template&id=0030706a&");
+/* harmony import */ var _shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shopping-car.vue?vue&type=script&lang=js& */ "../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _shopping_car_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shopping-car.vue?vue&type=style&index=0&lang=css& */ "../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _shopping_car_vue_vue_type_template_id_0030706a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _shopping_car_vue_vue_type_template_id_0030706a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./shopping-car.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=script&lang=js&");
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./shopping-car.vue?vue&type=style&index=0&lang=css& */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=template&id=0030706a&":
+/*!***********************************************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=template&id=0030706a& ***!
+  \***********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_template_id_0030706a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./shopping-car.vue?vue&type=template&id=0030706a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=template&id=0030706a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_template_id_0030706a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_shopping_car_vue_vue_type_template_id_0030706a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!D:/workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  data: function data() {
+    return {
+      total: 0, //总价
+      checkedAll: false,
+      shopList: [
+      {
+        url: 'https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product1.jpg',
+        name: 'Apple iPhone X 256GB 深空灰色 移动联通电信4G手机',
+        price: 8888,
+        count: 1,
+        selected: false },
+
+      {
+        url: 'https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product2.jpg',
+        name: 'Apple iPad 平板电脑 2018年新款9.7英寸',
+        price: 3399,
+        count: 1,
+        selected: false },
+
+      {
+        url: 'https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product4.jpg',
+        name: 'Kindle Paperwhite电纸书阅读器 电子书墨水屏 6英寸wifi 黑色',
+        price: 958,
+        count: 2,
+        selected: false },
+
+      {
+        url: 'https://img-cdn-qiniu.dcloud.net.cn/uploads/example/product6.jpg',
+        name: 'Apple Watch Series 3智能手表（GPS款 42毫米 深空灰色铝金属表壳 黑色运动型表带 MQL12CH/A）',
+        price: 2799,
+        count: 1,
+        selected: false }] };
+
+
+
+  },
+  methods: {
+    //购买
+    buy: function buy() {
+      if (this.total == 0) {
+        uni.showToast({
+          icon: 'none',
+          title: '请选择本次购买的商品' });
+
+        return;
+      }
+      uni.showLoading({
+        title: '请稍后...' });
+
+      setTimeout(function () {
+        uni.hideLoading();
+        uni.showToast({
+          title: '购买成功' });
+
+      }, 1500);
+    },
+    //去商品详情
+    toGoods: function toGoods(e) {
+      var index = e.currentTarget.dataset.index;
+      uni.navigateTo({
+        url: '/pages/goods/goods?index=' + index });
+
+    },
+    //长按商品从购物车移除
+    deleteShopItem: function deleteShopItem(e) {var _this = this;
+      var index = e.currentTarget.dataset.index;
+      uni.showModal({
+        title: '提示',
+        content: '确定将本商品从购物车移除吗?',
+        confirmColor: '#EE6A50',
+        success: function success(res) {
+          if (res.confirm) {
+            _this.shopList.splice(index, 1);
+          } else {
+            console.log("取消移除");
+          }
+        } });
+
+    },
+    //选中所有商品
+    selectShops: function selectShops(e) {
+      this.checkedAll = !this.checkedAll;
+      var total = 0;
+      if (this.checkedAll) {
+        this.shopList.forEach(function (item, index) {
+          total += item.count * item.price;
+          item.selected = true;
+        });
+      } else {
+        this.shopList.forEach(function (item, index) {
+          total = 0;
+          item.selected = false;
+        });
+      }
+      this.total = total;
+    },
+    //选中某一商品
+    selectShopItem: function selectShopItem(e) {
+      var index = e.currentTarget.dataset.index;
+      this.shopList[index].selected = !this.shopList[index].selected;
+      if (this.shopList[index].selected) {
+        this.total += this.shopList[index].price * this.shopList[index].count;
+      } else {
+        this.total -= this.shopList[index].price * this.shopList[index].count;
+      }
+    },
+    addCount: function addCount(e) {
+      var index = e.currentTarget.dataset.index;
+      this.shopList[index].count++;
+      if (this.shopList[index].selected) {
+        this.total += this.shopList[index].price;
+      }
+    },
+    reduceCount: function reduceCount(e) {
+      var index = e.currentTarget.dataset.index;
+      if (this.shopList[index].count > 1) {
+        this.shopList[index].count--;
+        if (this.shopList[index].selected) {
+          this.total -= this.shopList[index].price;
+        }
+      }
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!D:/workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=template&id=0030706a&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!D:/workspace/uni-app/uni-quickGo/pages/shopping-car/shopping-car.vue?vue&type=template&id=0030706a& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "view",
+    { staticClass: "page" },
+    [
+      _vm._l(_vm.shopList, function(item, index) {
+        return _c(
+          "view",
+          {
+            key: index,
+            staticClass: "shop-item",
+            attrs: { "data-index": index, eventid: "68dd0d52-3-" + index },
+            on: { click: _vm.toGoods, longpress: _vm.deleteShopItem }
+          },
+          [
+            _c(
+              "checkbox-group",
+              {
+                staticClass: "check-box",
+                attrs: {
+                  "data-index": index,
+                  eventid: "68dd0d52-0-" + index,
+                  mpcomid: "68dd0d52-0-" + index
+                },
+                on: {
+                  change: _vm.selectShopItem,
+                  click: function($event) {
+                    $event.stopPropagation()
+                  }
+                }
+              },
+              [
+                _c("checkbox", {
+                  attrs: {
+                    value: item.price * item.count,
+                    checked: item.selected
+                  }
+                })
+              ],
+              1
+            ),
+            _c("image", { staticClass: "shop-img", attrs: { src: item.url } }),
+            _c("view", { staticClass: "shop-desc" }, [
+              _c("text", { staticClass: "shop-title" }, [
+                _vm._v(_vm._s(item.name))
+              ]),
+              _c(
+                "view",
+                { staticClass: "shop-action" },
+                [
+                  _c("text", { staticClass: "shop-price" }, [
+                    _vm._v("￥" + _vm._s(item.price))
+                  ]),
+                  _c(
+                    "button",
+                    {
+                      attrs: {
+                        type: "primary",
+                        size: "mini",
+                        plain: "",
+                        "data-index": index,
+                        eventid: "68dd0d52-1-" + index
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.stopPropagation()
+                          _vm.addCount($event)
+                        }
+                      }
+                    },
+                    [_vm._v("+")]
+                  ),
+                  _c("text", { staticClass: "shop-count" }, [
+                    _vm._v(_vm._s(item.count))
+                  ]),
+                  _c(
+                    "button",
+                    {
+                      attrs: {
+                        type: "primary",
+                        size: "mini",
+                        plain: "",
+                        "data-index": index,
+                        eventid: "68dd0d52-2-" + index
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.stopPropagation()
+                          _vm.reduceCount($event)
+                        }
+                      }
+                    },
+                    [_vm._v("-")]
+                  )
+                ],
+                1
+              )
+            ])
+          ],
+          1
+        )
+      }),
+      _c("view", { staticClass: "blank" }),
+      _c(
+        "view",
+        { staticClass: "account" },
+        [
+          _c(
+            "checkbox-group",
+            {
+              staticClass: "check-box",
+              attrs: { eventid: "68dd0d52-4", mpcomid: "68dd0d52-1" },
+              on: { change: _vm.selectShops }
+            },
+            [_c("checkbox", { attrs: { checked: _vm.checkedAll } })],
+            1
+          ),
+          _c("text", { staticClass: "total" }, [
+            _vm._v("￥" + _vm._s(_vm.total))
+          ]),
+          _c(
+            "view",
+            {
+              staticClass: "pay",
+              attrs: { eventid: "68dd0d52-5" },
+              on: { click: _vm.buy }
+            },
+            [_c("text", { staticClass: "pay-text" }, [_vm._v("结 算")])]
+          )
+        ],
+        1
+      )
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ })
+
+},[["../../../../workspace/uni-app/uni-quickGo/main.js?{\"page\":\"pages%2Fshopping-car%2Fshopping-car\"}","common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/shopping-car/shopping-car.js.map

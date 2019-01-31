@@ -1,1 +1,2 @@
-<import src="/pages/set/set-address/set-address.vue.wxml" /><template is="6014416e" data="{{ ...$root['0'], $root }}"/>
+<import src="./set-address.vue.wxml" />
+    <template is="7902f49e" data="{{ ...$root['0'], $root }}"/>

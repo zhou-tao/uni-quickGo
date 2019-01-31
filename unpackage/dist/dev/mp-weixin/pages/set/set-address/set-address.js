@@ -1,4 +1,309 @@
-require("../../../common/manifest.js");
-require("../../../common/vendor.js");
-global.webpackJsonp([1],{72:function(t,e,a){"use strict";var s=i(a(1)),o=i(a(73));function i(t){return t&&t.__esModule?t:{default:t}}new s.default(o.default).$mount()},73:function(t,e,a){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var s=a(75),o=a.n(s),i=a(77),n=!1;var r=function(t){n||a(74)},c=a(0)(o.a,i.a,r,"data-v-fbe94e2a",null);c.options.__file="..\\..\\..\\workspace\\uni-quickGo\\pages\\set\\set-address\\set-address.vue",c.esModule&&Object.keys(c.esModule).some(function(t){return"default"!==t&&"__"!==t.substr(0,2)})&&console.error("named exports are not supported in *.vue files."),c.options.functional&&console.error("[vue-loader] set-address.vue: functional components are not supported with templates, they should use render functions."),e.default=c.exports},74:function(t,e){},75:function(t,e,a){"use strict";(function(t){Object.defineProperty(e,"__esModule",{value:!0});var s,o=a(76),i=(s=o)&&s.__esModule?s:{default:s};e.default={data:function(){return{nearData:[],markers:[],latitude:"",longitude:"",amapPlugin:null,key:"00e4555e3962f1dae4823d81b6474b83"}},onLoad:function(){var t=this;this.amapPlugin=new i.default.AMapWX({key:this.key}),this.amapPlugin.getRegeo({iconPath:"../../../static/image/marker.png",iconWidth:32,iconHeight:32,success:function(e){console.log(e),t.markers=[{id:e[0].id,latitude:e[0].latitude,longitude:e[0].longitude,iconPath:e[0].iconPath,width:e[0].width,height:e[0].height}],t.latitude=e[0].latitude,t.longitude=e[0].longitude,t.nearData=e[0].regeocodeData.pois}})},methods:{pickAddress:function(e){console.log(e);e.currentTarget.dataset.name;t.showLoading({title:"请稍后..."}),setTimeout(function(){t.hideLoading(),t.showToast({title:"已保存",success:function(e){t.navigateBack({delta:1})}})},1500)}}}}).call(e,a(2).default)},76:function(t,e,a){"use strict";function s(t){this.key=t.key,this.requestConfig={key:t.key,s:"rsx",platform:"WXJS",appname:t.key,sdkversion:"1.2.0",logversion:"2.0"}}s.prototype.getWxLocation=function(t,e){wx.getLocation({type:"gcj02",success:function(t){var a=t.longitude+","+t.latitude;wx.setStorage({key:"userLocation",data:a}),e(a)},fail:function(a){wx.getStorage({key:"userLocation",success:function(t){t.data&&e(t.data)}}),t.fail({errCode:"0",errMsg:a.errMsg||""})}})},s.prototype.getRegeo=function(t){function e(e){var s=a.requestConfig;wx.request({url:"https://restapi.amap.com/v3/geocode/regeo",data:{key:a.key,location:e,extensions:"all",s:s.s,platform:s.platform,appname:a.key,sdkversion:s.sdkversion,logversion:s.logversion},method:"GET",header:{"content-type":"application/json"},success:function(a){var s,o,i,n,r,c,d,p,u;a.data.status&&"1"==a.data.status?(o=(s=a.data.regeocode).addressComponent,i=[],n="",s&&s.roads[0]&&s.roads[0].name&&(n=s.roads[0].name+"附近"),r=e.split(",")[0],c=e.split(",")[1],s.pois&&s.pois[0]&&(n=s.pois[0].name+"附近",(d=s.pois[0].location)&&(r=parseFloat(d.split(",")[0]),c=parseFloat(d.split(",")[1]))),o.provice&&i.push(o.provice),o.city&&i.push(o.city),o.district&&i.push(o.district),o.streetNumber&&o.streetNumber.street&&o.streetNumber.number?(i.push(o.streetNumber.street),i.push(o.streetNumber.number)):(p="",s&&s.roads[0]&&s.roads[0].name&&(p=s.roads[0].name),i.push(p)),i=i.join(""),u=[{iconPath:t.iconPath,width:t.iconWidth,height:t.iconHeight,name:i,desc:n,longitude:r,latitude:c,id:0,regeocodeData:s}],t.success(u)):t.fail({errCode:a.data.infocode,errMsg:a.data.info})},fail:function(e){t.fail({errCode:"0",errMsg:e.errMsg||""})}})}var a=this;t.location?e(t.location):a.getWxLocation(t,function(t){e(t)})},s.prototype.getWeather=function(t){function e(e){var a="base";t.type&&"forecast"==t.type&&(a="all"),wx.request({url:"https://restapi.amap.com/v3/weather/weatherInfo",data:{key:s.key,city:e,extensions:a,s:o.s,platform:o.platform,appname:s.key,sdkversion:o.sdkversion,logversion:o.logversion},method:"GET",header:{"content-type":"application/json"},success:function(e){var a,s;e.data.status&&"1"==e.data.status?e.data.lives?(a=e.data.lives)&&a.length>0&&((s=function(t){return{city:{text:"城市",data:t.city},weather:{text:"天气",data:t.weather},temperature:{text:"温度",data:t.temperature},winddirection:{text:"风向",data:t.winddirection+"风"},windpower:{text:"风力",data:t.windpower+"级"},humidity:{text:"湿度",data:t.humidity+"%"}}}(a=a[0])).liveData=a,t.success(s)):e.data.forecasts&&e.data.forecasts[0]&&t.success({forecast:e.data.forecasts[0]}):t.fail({errCode:e.data.infocode,errMsg:e.data.info})},fail:function(e){t.fail({errCode:"0",errMsg:e.errMsg||""})}})}function a(a){wx.request({url:"https://restapi.amap.com/v3/geocode/regeo",data:{key:s.key,location:a,extensions:"all",s:o.s,platform:o.platform,appname:s.key,sdkversion:o.sdkversion,logversion:o.logversion},method:"GET",header:{"content-type":"application/json"},success:function(a){var s,o;a.data.status&&"1"==a.data.status?((o=a.data.regeocode).addressComponent?s=o.addressComponent.adcode:o.aois&&o.aois.length>0&&(s=o.aois[0].adcode),e(s)):t.fail({errCode:a.data.infocode,errMsg:a.data.info})},fail:function(e){t.fail({errCode:"0",errMsg:e.errMsg||""})}})}var s=this,o=s.requestConfig;t.city?e(t.city):s.getWxLocation(t,function(t){a(t)})},s.prototype.getPoiAround=function(t){function e(e){var o={key:a.key,location:e,s:s.s,platform:s.platform,appname:a.key,sdkversion:s.sdkversion,logversion:s.logversion};t.querytypes&&(o.types=t.querytypes),t.querykeywords&&(o.keywords=t.querykeywords),wx.request({url:"https://restapi.amap.com/v3/place/around",data:o,method:"GET",header:{"content-type":"application/json"},success:function(e){var a,s,o,i;if(e.data.status&&"1"==e.data.status){if((e=e.data)&&e.pois){for(a=[],s=0;s<e.pois.length;s++)o=0==s?t.iconPathSelected:t.iconPath,a.push({latitude:parseFloat(e.pois[s].location.split(",")[1]),longitude:parseFloat(e.pois[s].location.split(",")[0]),iconPath:o,width:22,height:32,id:s,name:e.pois[s].name,address:e.pois[s].address});i={markers:a,poisData:e.pois},t.success(i)}}else t.fail({errCode:e.data.infocode,errMsg:e.data.info})},fail:function(e){t.fail({errCode:"0",errMsg:e.errMsg||""})}})}var a=this,s=a.requestConfig;t.location?e(t.location):a.getWxLocation(t,function(t){e(t)})},s.prototype.getStaticmap=function(t){function e(e){o.push("location="+e),t.zoom&&o.push("zoom="+t.zoom),t.size&&o.push("size="+t.size),t.scale&&o.push("scale="+t.scale),t.markers&&o.push("markers="+t.markers),t.labels&&o.push("labels="+t.labels),t.paths&&o.push("paths="+t.paths),t.traffic&&o.push("traffic="+t.traffic);var a=i+o.join("&");t.success({url:a})}var a,s=this,o=[],i="https://restapi.amap.com/v3/staticmap?";o.push("key="+s.key),a=s.requestConfig,o.push("s="+a.s),o.push("platform="+a.platform),o.push("appname="+a.appname),o.push("sdkversion="+a.sdkversion),o.push("logversion="+a.logversion),t.location?e(t.location):s.getWxLocation(t,function(t){e(t)})},s.prototype.getInputtips=function(t){var e=this,a=e.requestConfig,s={key:e.key,s:a.s,platform:a.platform,appname:e.key,sdkversion:a.sdkversion,logversion:a.logversion};t.location&&(s.location=t.location),t.keywords&&(s.keywords=t.keywords),t.type&&(s.type=t.type),t.city&&(s.city=t.city),t.citylimit&&(s.citylimit=t.citylimit),wx.request({url:"https://restapi.amap.com/v3/assistant/inputtips",data:s,method:"GET",header:{"content-type":"application/json"},success:function(e){e&&e.data&&e.data.tips&&t.success({tips:e.data.tips})},fail:function(e){t.fail({errCode:"0",errMsg:e.errMsg||""})}})},s.prototype.getDrivingRoute=function(t){var e=this,a=e.requestConfig,s={key:e.key,s:a.s,platform:a.platform,appname:e.key,sdkversion:a.sdkversion,logversion:a.logversion};t.origin&&(s.origin=t.origin),t.destination&&(s.destination=t.destination),t.strategy&&(s.strategy=t.strategy),t.waypoints&&(s.waypoints=t.waypoints),t.avoidpolygons&&(s.avoidpolygons=t.avoidpolygons),t.avoidroad&&(s.avoidroad=t.avoidroad),wx.request({url:"https://restapi.amap.com/v3/direction/driving",data:s,method:"GET",header:{"content-type":"application/json"},success:function(e){e&&e.data&&e.data.route&&t.success({paths:e.data.route.paths,taxi_cost:e.data.route.taxi_cost||""})},fail:function(e){t.fail({errCode:"0",errMsg:e.errMsg||""})}})},s.prototype.getWalkingRoute=function(t){var e=this,a=e.requestConfig,s={key:e.key,s:a.s,platform:a.platform,appname:e.key,sdkversion:a.sdkversion,logversion:a.logversion};t.origin&&(s.origin=t.origin),t.destination&&(s.destination=t.destination),wx.request({url:"https://restapi.amap.com/v3/direction/walking",data:s,method:"GET",header:{"content-type":"application/json"},success:function(e){e&&e.data&&e.data.route&&t.success({paths:e.data.route.paths})},fail:function(e){t.fail({errCode:"0",errMsg:e.errMsg||""})}})},s.prototype.getTransitRoute=function(t){var e=this,a=e.requestConfig,s={key:e.key,s:a.s,platform:a.platform,appname:e.key,sdkversion:a.sdkversion,logversion:a.logversion};t.origin&&(s.origin=t.origin),t.destination&&(s.destination=t.destination),t.strategy&&(s.strategy=t.strategy),t.city&&(s.city=t.city),t.cityd&&(s.cityd=t.cityd),wx.request({url:"https://restapi.amap.com/v3/direction/transit/integrated",data:s,method:"GET",header:{"content-type":"application/json"},success:function(e){if(e&&e.data&&e.data.route){var a=e.data.route;t.success({distance:a.distance||"",taxi_cost:a.taxi_cost||"",transits:a.transits})}},fail:function(e){t.fail({errCode:"0",errMsg:e.errMsg||""})}})},s.prototype.getRidingRoute=function(t){var e=this,a=e.requestConfig,s={key:e.key,s:a.s,platform:a.platform,appname:e.key,sdkversion:a.sdkversion,logversion:a.logversion};t.origin&&(s.origin=t.origin),t.destination&&(s.destination=t.destination),wx.request({url:"https://restapi.amap.com/v4/direction/bicycling",data:s,method:"GET",header:{"content-type":"application/json"},success:function(e){e&&e.data&&e.data.data&&t.success({paths:e.data.data.paths})},fail:function(e){t.fail({errCode:"0",errMsg:e.errMsg||""})}})},t.exports.AMapWX=s},77:function(t,e,a){"use strict";var s=function(){var t=this,e=t.$createElement,a=t._self._c||e;return a("view",{staticClass:"page"},[a("view",{staticClass:"map"},[a("map",{staticClass:"map",attrs:{latitude:t.latitude,longitude:t.longitude,markers:t.markers}})],1),a("scroll-view",{staticClass:"near-address",attrs:{"scroll-y":"true"}},t._l(t.nearData,function(e,s){return a("view",{key:e.id,staticClass:"item",attrs:{"data-name":e.name,eventid:"ob4-0-"+s},on:{click:t.pickAddress}},[a("view",{staticClass:"flag"},[a("image",0==s?{staticClass:"point",attrs:{src:"../../../static/image/point-c.png"}}:{staticClass:"point",attrs:{src:"../../../static/image/point.png"}})]),a("view",{staticClass:"address"},[a("view",{staticClass:"name"},[a("text",[t._v(t._s(e.name))])]),a("view",{staticClass:"desc"},[a("text",{staticClass:"desc-word"},[t._v(t._s(e.address))])])])])}))],1)};s._withStripped=!0;var o={render:s,staticRenderFns:[]};e.a=o}},[72]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/set/set-address/set-address"],{
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/main.js?{\"page\":\"pages%2Fset%2Fset-address%2Fset-address\"}":
+/*!***************************************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/main.js?{"page":"pages%2Fset%2Fset-address%2Fset-address"} ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+__webpack_require__(/*! uni-pages */ "../../../../workspace/uni-app/uni-quickGo/pages.json");
+var _mpvuePageFactory = _interopRequireDefault(__webpack_require__(/*! mpvue-page-factory */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mpvue-page-factory/index.js"));
+var _setAddress = _interopRequireDefault(__webpack_require__(/*! ./pages/set/set-address/set-address.vue */ "../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Page((0, _mpvuePageFactory.default)(_setAddress.default));
+
+/***/ }),
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue":
+/*!******************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _set_address_vue_vue_type_template_id_18c2dd71_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./set-address.vue?vue&type=template&id=18c2dd71&scoped=true& */ "../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=template&id=18c2dd71&scoped=true&");
+/* harmony import */ var _set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./set-address.vue?vue&type=script&lang=js& */ "../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _set_address_vue_vue_type_style_index_0_id_18c2dd71_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./set-address.vue?vue&type=style&index=0&id=18c2dd71&scoped=true&lang=css& */ "../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=style&index=0&id=18c2dd71&scoped=true&lang=css&");
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _set_address_vue_vue_type_template_id_18c2dd71_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _set_address_vue_vue_type_template_id_18c2dd71_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "18c2dd71",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./set-address.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=script&lang=js&");
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=style&index=0&id=18c2dd71&scoped=true&lang=css&":
+/*!***************************************************************************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=style&index=0&id=18c2dd71&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_style_index_0_id_18c2dd71_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./set-address.vue?vue&type=style&index=0&id=18c2dd71&scoped=true&lang=css& */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=style&index=0&id=18c2dd71&scoped=true&lang=css&");
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_style_index_0_id_18c2dd71_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_style_index_0_id_18c2dd71_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_style_index_0_id_18c2dd71_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_style_index_0_id_18c2dd71_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_style_index_0_id_18c2dd71_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=template&id=18c2dd71&scoped=true&":
+/*!*************************************************************************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=template&id=18c2dd71&scoped=true& ***!
+  \*************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_template_id_18c2dd71_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../../开发/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./set-address.vue?vue&type=template&id=18c2dd71&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=template&id=18c2dd71&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_template_id_18c2dd71_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_set_address_vue_vue_type_template_id_18c2dd71_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "../../../../workspace/uni-app/uni-quickGo/utils/js/amap-wx.js":
+/*!************************************************************!*\
+  !*** D:/workspace/uni-app/uni-quickGo/utils/js/amap-wx.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function AMapWX(a) {this.key = a.key, this.requestConfig = { key: a.key, s: "rsx", platform: "WXJS", appname: a.key, sdkversion: "1.2.0", logversion: "2.0" };}AMapWX.prototype.getWxLocation = function (a, b) {wx.getLocation({ type: "gcj02", success: function success(a) {var c = a.longitude + "," + a.latitude;wx.setStorage({ key: "userLocation", data: c }), b(c);}, fail: function fail(c) {wx.getStorage({ key: "userLocation", success: function success(a) {a.data && b(a.data);} }), a.fail({ errCode: "0", errMsg: c.errMsg || "" });} });}, AMapWX.prototype.getRegeo = function (a) {function c(c) {var d = b.requestConfig;wx.request({ url: "https://restapi.amap.com/v3/geocode/regeo", data: { key: b.key, location: c, extensions: "all", s: d.s, platform: d.platform, appname: b.key, sdkversion: d.sdkversion, logversion: d.logversion }, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {var d, e, f, g, h, i, j, k, l;b.data.status && "1" == b.data.status ? (d = b.data.regeocode, e = d.addressComponent, f = [], g = "", d && d.roads[0] && d.roads[0].name && (g = d.roads[0].name + "附近"), h = c.split(",")[0], i = c.split(",")[1], d.pois && d.pois[0] && (g = d.pois[0].name + "附近", j = d.pois[0].location, j && (h = parseFloat(j.split(",")[0]), i = parseFloat(j.split(",")[1]))), e.provice && f.push(e.provice), e.city && f.push(e.city), e.district && f.push(e.district), e.streetNumber && e.streetNumber.street && e.streetNumber.number ? (f.push(e.streetNumber.street), f.push(e.streetNumber.number)) : (k = "", d && d.roads[0] && d.roads[0].name && (k = d.roads[0].name), f.push(k)), f = f.join(""), l = [{ iconPath: a.iconPath, width: a.iconWidth, height: a.iconHeight, name: f, desc: g, longitude: h, latitude: i, id: 0, regeocodeData: d }], a.success(l)) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}var b = this;a.location ? c(a.location) : b.getWxLocation(a, function (a) {c(a);});}, AMapWX.prototype.getWeather = function (a) {function d(d) {var e = "base";a.type && "forecast" == a.type && (e = "all"), wx.request({ url: "https://restapi.amap.com/v3/weather/weatherInfo", data: { key: b.key, city: d, extensions: e, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion }, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {function c(a) {var b = { city: { text: "城市", data: a.city }, weather: { text: "天气", data: a.weather }, temperature: { text: "温度", data: a.temperature }, winddirection: { text: "风向", data: a.winddirection + "风" }, windpower: { text: "风力", data: a.windpower + "级" }, humidity: { text: "湿度", data: a.humidity + "%" } };return b;}var d, e;b.data.status && "1" == b.data.status ? b.data.lives ? (d = b.data.lives, d && d.length > 0 && (d = d[0], e = c(d), e["liveData"] = d, a.success(e))) : b.data.forecasts && b.data.forecasts[0] && a.success({ forecast: b.data.forecasts[0] }) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}function e(e) {wx.request({ url: "https://restapi.amap.com/v3/geocode/regeo", data: { key: b.key, location: e, extensions: "all", s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion }, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {var c, e;b.data.status && "1" == b.data.status ? (e = b.data.regeocode, e.addressComponent ? c = e.addressComponent.adcode : e.aois && e.aois.length > 0 && (c = e.aois[0].adcode), d(c)) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}var b = this,c = b.requestConfig;a.city ? d(a.city) : b.getWxLocation(a, function (a) {e(a);});}, AMapWX.prototype.getPoiAround = function (a) {function d(d) {var e = { key: b.key, location: d, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.querytypes && (e["types"] = a.querytypes), a.querykeywords && (e["keywords"] = a.querykeywords), wx.request({ url: "https://restapi.amap.com/v3/place/around", data: e, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {var c, d, e, f;if (b.data.status && "1" == b.data.status) {if (b = b.data, b && b.pois) {for (c = [], d = 0; d < b.pois.length; d++) {e = 0 == d ? a.iconPathSelected : a.iconPath, c.push({ latitude: parseFloat(b.pois[d].location.split(",")[1]), longitude: parseFloat(b.pois[d].location.split(",")[0]), iconPath: e, width: 22, height: 32, id: d, name: b.pois[d].name, address: b.pois[d].address });}f = { markers: c, poisData: b.pois }, a.success(f);}} else a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}var b = this,c = b.requestConfig;a.location ? d(a.location) : b.getWxLocation(a, function (a) {d(a);});}, AMapWX.prototype.getStaticmap = function (a) {function f(b) {c.push("location=" + b), a.zoom && c.push("zoom=" + a.zoom), a.size && c.push("size=" + a.size), a.scale && c.push("scale=" + a.scale), a.markers && c.push("markers=" + a.markers), a.labels && c.push("labels=" + a.labels), a.paths && c.push("paths=" + a.paths), a.traffic && c.push("traffic=" + a.traffic);var e = d + c.join("&");a.success({ url: e });}var e,b = this,c = [],d = "https://restapi.amap.com/v3/staticmap?";c.push("key=" + b.key), e = b.requestConfig, c.push("s=" + e.s), c.push("platform=" + e.platform), c.push("appname=" + e.appname), c.push("sdkversion=" + e.sdkversion), c.push("logversion=" + e.logversion), a.location ? f(a.location) : b.getWxLocation(a, function (a) {f(a);});}, AMapWX.prototype.getInputtips = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.location && (d["location"] = a.location), a.keywords && (d["keywords"] = a.keywords), a.type && (d["type"] = a.type), a.city && (d["city"] = a.city), a.citylimit && (d["citylimit"] = a.citylimit), wx.request({ url: "https://restapi.amap.com/v3/assistant/inputtips", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.tips && a.success({ tips: b.data.tips });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getDrivingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), a.strategy && (d["strategy"] = a.strategy), a.waypoints && (d["waypoints"] = a.waypoints), a.avoidpolygons && (d["avoidpolygons"] = a.avoidpolygons), a.avoidroad && (d["avoidroad"] = a.avoidroad), wx.request({ url: "https://restapi.amap.com/v3/direction/driving", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.route && a.success({ paths: b.data.route.paths, taxi_cost: b.data.route.taxi_cost || "" });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getWalkingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), wx.request({ url: "https://restapi.amap.com/v3/direction/walking", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.route && a.success({ paths: b.data.route.paths });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getTransitRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), a.strategy && (d["strategy"] = a.strategy), a.city && (d["city"] = a.city), a.cityd && (d["cityd"] = a.cityd), wx.request({ url: "https://restapi.amap.com/v3/direction/transit/integrated", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {if (b && b.data && b.data.route) {var c = b.data.route;a.success({ distance: c.distance || "", taxi_cost: c.taxi_cost || "", transits: c.transits });}}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getRidingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), wx.request({ url: "https://restapi.amap.com/v4/direction/bicycling", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.data && a.success({ paths: b.data.data.paths });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, module.exports.AMapWX = AMapWX;
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!D:/workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _amapWx = _interopRequireDefault(__webpack_require__(/*! ../../../utils/js/amap-wx.js */ "../../../../workspace/uni-app/uni-quickGo/utils/js/amap-wx.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  data: function data() {
+    return {
+      nearData: [],
+      markers: [],
+      latitude: '',
+      longitude: '',
+      amapPlugin: null,
+      //高德开发者申请KEY
+      key: '00e4555e3962f1dae4823d81b6474b83' };
+
+  },
+  onLoad: function onLoad() {var _this = this;
+    //注册高德插件
+    this.amapPlugin = new _amapWx.default.AMapWX({
+      key: this.key });
+
+    this.amapPlugin.getRegeo({
+      iconPath: "../../../static/image/marker.png",
+      iconWidth: 32,
+      iconHeight: 32,
+      success: function success(data) {
+        console.log(data);
+        _this.markers = [{
+          id: data[0].id,
+          latitude: data[0].latitude,
+          longitude: data[0].longitude,
+          iconPath: data[0].iconPath,
+          width: data[0].width,
+          height: data[0].height }];
+
+        _this.latitude = data[0].latitude;
+        _this.longitude = data[0].longitude;
+        _this.nearData = data[0].regeocodeData.pois;
+      } });
+
+  },
+  methods: {
+    pickAddress: function pickAddress(e) {
+      console.log(e);
+      var name = e.currentTarget.dataset.name;
+      uni.showLoading({
+        title: '请稍后...' });
+
+      setTimeout(function () {
+        uni.hideLoading();
+        uni.showToast({
+          title: '已保存',
+          success: function success(res) {
+            uni.navigateBack({
+              delta: 1 });
+
+          } });
+
+      }, 1500);
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=style&index=0&id=18c2dd71&scoped=true&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!D:/workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=style&index=0&id=18c2dd71&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=template&id=18c2dd71&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!D:/workspace/uni-app/uni-quickGo/pages/set/set-address/set-address.vue?vue&type=template&id=18c2dd71&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "view",
+    { staticClass: "page" },
+    [
+      _c(
+        "view",
+        { staticClass: "map" },
+        [
+          _c("map", {
+            staticClass: "map",
+            attrs: {
+              latitude: _vm.latitude,
+              longitude: _vm.longitude,
+              markers: _vm.markers
+            }
+          })
+        ],
+        1
+      ),
+      _c(
+        "scroll-view",
+        { staticClass: "near-address", attrs: { "scroll-y": "true" } },
+        _vm._l(_vm.nearData, function(item, index) {
+          return _c(
+            "view",
+            {
+              key: item.id,
+              staticClass: "item",
+              attrs: { "data-name": item.name, eventid: "7902f49e-0-" + index },
+              on: { click: _vm.pickAddress }
+            },
+            [
+              _c("view", { staticClass: "flag" }, [
+                index == 0
+                  ? _c("image", {
+                      staticClass: "point",
+                      attrs: { src: "../../../static/image/point-c.png" }
+                    })
+                  : _c("image", {
+                      staticClass: "point",
+                      attrs: { src: "../../../static/image/point.png" }
+                    })
+              ]),
+              _c("view", { staticClass: "address" }, [
+                _c("view", { staticClass: "name" }, [
+                  _c("text", [_vm._v(_vm._s(item.name))])
+                ]),
+                _c("view", { staticClass: "desc" }, [
+                  _c("text", { staticClass: "desc-word" }, [
+                    _vm._v(_vm._s(item.address))
+                  ])
+                ])
+              ])
+            ]
+          )
+        })
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ })
+
+},[["../../../../workspace/uni-app/uni-quickGo/main.js?{\"page\":\"pages%2Fset%2Fset-address%2Fset-address\"}","common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/set/set-address/set-address.js.map

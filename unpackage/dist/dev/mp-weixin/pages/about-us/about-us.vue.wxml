@@ -1,17 +1,1 @@
-<template name="1555bd2e">
-  <view class="_view data-v-b1a6e778 page">
-    <view class="_view data-v-b1a6e778 header">
-      <image src="../../static/image/logo.png" class="_image data-v-b1a6e778 logo"></image>
-      <text class="_text data-v-b1a6e778 title">尤尼快购 v1.0</text>
-    </view>
-    <view class="_view data-v-b1a6e778 option first">
-      <text class="_text data-v-b1a6e778 desc">功能介绍</text>
-    </view>
-    <view class="_view data-v-b1a6e778 option" bindtap="handleProxy" data-eventid="{{'M4R-0'}}" data-comkey="{{$k}}">
-      <text class="_text data-v-b1a6e778 desc">检查更新</text>
-    </view>
-    <view class="_view data-v-b1a6e778 option">
-      <text class="_text data-v-b1a6e778 desc">联系客服</text>
-    </view>
-  </view>
-</template>
+<template name="306e2e37"><view class="_view 306e2e37 page"><view class="_view 306e2e37 header"><image src="../../static/image/logo.png" class="_image 306e2e37 logo"></image><text class="_text 306e2e37 title">尤尼快购 v1.0</text></view><view class="_view 306e2e37 option first"><text class="_text 306e2e37 desc">功能介绍</text></view><view class="_view 306e2e37 option" bindtap="handleProxy" data-eventid="{{'306e2e37-0'}}" data-comkey="{{$k}}"><text class="_text 306e2e37 desc">检查更新</text></view><view class="_view 306e2e37 option"><text class="_text 306e2e37 desc">联系客服</text></view></view></template>

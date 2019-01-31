@@ -6,7 +6,9 @@
 
 <script>
 	export default {
-		
+		onPullDownRefresh() {
+			console.log('pull');
+		}
 	}
 </script>
 

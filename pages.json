@@ -52,7 +52,8 @@
         {
             "path" : "pages/footprint/footprint",
             "style" : {
-                "navigationBarTitleText" : "我的足迹"
+                "navigationBarTitleText" : "我的足迹",
+				"enablePullDownRefresh" : true
             }
         },
         {

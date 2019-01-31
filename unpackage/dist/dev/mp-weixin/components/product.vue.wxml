@@ -1,11 +1,1 @@
-<template name="b835c958">
-  <view class="_view data-v-047deb46 product">
-    <image class="_image data-v-047deb46 product-image" src="{{image ? image : 'http://via.placeholder.com/150x200'}}"></image>
-    <view class="_view data-v-047deb46 product-title">{{title}}</view>
-    <view class="_view data-v-047deb46 product-price">
-      <text class="_text data-v-047deb46 product-price-favour">￥{{originalPrice}}</text>
-      <text class="_text data-v-047deb46 product-price-original">￥{{favourPrice}}</text>
-      <text class="_text data-v-047deb46 product-tip">{{tip}}</text>
-    </view>
-  </view>
-</template>
+<template name="aaa4137a"><view class="_view aaa4137a product"><image class="_image aaa4137a product-image" src="{{image ? image : 'http://via.placeholder.com/150x200'}}"></image><view class="_view aaa4137a product-title">{{title}}</view><view class="_view aaa4137a product-price"><text class="_text aaa4137a product-price-favour">￥{{originalPrice}}</text><text class="_text aaa4137a product-price-original">￥{{favourPrice}}</text><text class="_text aaa4137a product-tip">{{tip}}</text></view></view></template>

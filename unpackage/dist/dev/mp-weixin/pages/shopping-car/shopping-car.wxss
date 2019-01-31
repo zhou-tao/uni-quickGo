@@ -1,108 +1,122 @@
-@import "../../common/vendor.wxss";
-.page {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-content: flex-start;
-  align-content: flex-start;
+/*页面flex布局*/
+.page{
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-align-content: flex-start;
+	    -ms-flex-line-pack: start;
+	        align-content: flex-start;  /*交叉轴的起点对齐*/
 }
-.shop-item {
-  width: 100%;
-  height: 240rpx;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  padding: 30rpx 20rpx;
-  border-bottom: solid 1rpx #EDEDED;
+.shop-item{
+	width: 100%;
+	height: 240rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	padding: 30rpx 20rpx;
+	border-bottom: solid 1rpx #EDEDED;
 }
-.shop-img {
-  height: 100%;
-  width: 240rpx;
-  margin-left: 30rpx;
+.shop-img{
+	height: 100%;
+	width: 240rpx;
+	margin-left: 30rpx;
 }
-.shop-desc {
-  width: 360rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
+.shop-desc{
+	width: 360rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;  /*交叉轴的起点对齐*/
 }
-.shop-title {
-  width: 360rpx;
-  color: #666666;
-  font-size: 32rpx;
-  word-break: break-all;
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+.shop-title{
+	width: 360rpx;
+	color: #666666;
+	font-size: 32rpx;
+	word-break: break-all;
+	display: -webkit-box;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
 }
-.shop-action {
-  width: 360rpx;
-  line-height: 60rpx;
-  margin-top: 26rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
+.shop-action{
+	width: 360rpx;
+	line-height: 60rpx;
+	margin-top: 26rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;  /*交叉轴的起点对齐*/
 }
-.shop-price {
-  color: #E80080;
-  font-size: 34rpx;
+.shop-price{
+	color: #E80080;
+	font-size: 34rpx;
 }
-.shop-count {
-  top: 2rpx;
-  font-size: 32rpx;
-  color: #888888;
+.shop-count{
+	top: 2rpx;
+	font-size: 32rpx;
+	color: #888888;
 }
-.blank {
-  width: 100%;
-  height: 100rpx;
+.blank{
+	width: 100%;
+	height: 100rpx;
 }
-.account {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding-left: 20rpx;
-  height: 100rpx;
-  line-height: 100rpx;
-  background: #EDEDED;
+.account{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding-left: 20rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	background: #EDEDED;
 }
-.total {
-  font-size: 35rpx;
-  color: #ff3333;
-  font-weight: 500;
+.total{
+	font-size: 35rpx;
+	color: #ff3333;
+	font-weight: 500;
 }
-.pay {
-  position: absolute;
-  width: 200rpx;
-  height: 100rpx;
-  right: 0;
-  background: #ff9966;
+.pay{
+	position: absolute;
+	width: 200rpx;
+	height: 100rpx;
+	right: 0;
+	background: #ff9966;
 }
-.pay-text {
-  margin: 0 auto;
-  font-size: 35rpx;
-  font-weight: 500;
-  color: white;
+.pay-text{
+	margin: 0 auto;
+	font-size: 35rpx;
+	font-weight: 500;
+	color: white;
 }
+
+

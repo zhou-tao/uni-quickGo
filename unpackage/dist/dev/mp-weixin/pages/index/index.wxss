@@ -1,50 +1,60 @@
-@import "../../common/vendor.wxss";
-.page.data-v-0c8c516a {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-content: flex-start;
-  align-content: flex-start;
+/*页面flex布局*/
+.page.data-v-620cbc20{
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-align-content: flex-start;
+	    -ms-flex-line-pack: start;
+	        align-content: flex-start;  /*交叉轴的起点对齐*/
 }
-.swipper-content.data-v-0c8c516a {
-  width: 100%;
-  height: 300rpx;
-  background: #AEEEEE;
+.swipper-content.data-v-620cbc20 {
+	width: 100%;
+	height: 300rpx;
+	background: #AEEEEE;
 }
-.swipper-img.data-v-0c8c516a {
-  width: 100%;
-  height: 300rpx;
+.swipper-img.data-v-620cbc20{
+	width: 100%;
+	height: 300rpx;
 }
-.line-content.data-v-0c8c516a {
-  width: 100%;
-  height: 80rpx;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+.line-content.data-v-620cbc20{
+	width: 100%;
+	height: 80rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
-.line.data-v-0c8c516a {
-  width: 36%;
-  height: 2rpx;
-  background: #BABABA;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+.line.data-v-620cbc20{
+	width: 36%;
+	height: 2rpx;
+	background: #BABABA;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
-.content.data-v-0c8c516a {
-  color: #BABABA;
-  font-size: 32rpx;
-  margin: 0 20rpx;
+.content.data-v-620cbc20{
+	color: #BABABA;
+	font-size: 32rpx;
+	margin: 0 20rpx;
 }
+
+

@@ -1,11 +1,2 @@
-@import "common/vendor.wxss";
-
-page,
-view {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-}
-page {
-  min-height: 100%;
-}
+@import './common/main.wxss';
+@import './common/vendor.wxss';
