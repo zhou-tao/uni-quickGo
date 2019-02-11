@@ -396,7 +396,7 @@ var render = function() {
             attrs: { eventid: "1a5fe4a5-3" },
             on: { click: _vm.buy }
           },
-          [_c("text", { attrs: { space: "ensp" } }, [_vm._v("立即购买")])]
+          [_c("text", [_vm._v("立即购买")])]
         )
       ])
     ])

@@ -45,7 +45,7 @@
 					<text>加入购物车</text>
 				</view>
 				<view class="action buy" @click="buy">
-					<text space="ensp">立即购买 </text> 
+					<text>立即购买</text> 
 				</view>
 			</view>
 		</view>
@@ -227,8 +227,8 @@
 		height: 80upx;
 		line-height: 80upx;
 		text-align: center;
-		border-radius: 50%;
-		background: #66FFCC;
+		border-radius: 10upx;
+		background: #ff6633;
 		color: white;
 		font-size: 50upx;
 	}
@@ -243,22 +243,26 @@
 	}
 	
 	.submit{
-		width: 320upx;
+		display: flex;
+		flex-direction: row;
 		height: 100upx;
-		line-height: 100upx;
 	}
 	
 	.action{
-		display: inline-block;
-		text-align: center;
-		width: 160upx;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 200upx;
 		height: 100upx;
-		background: #AEEEEE;
+		background: #6699ff;
 		color: white;
 		font-size: 30upx;
 	}
 	
 	.buy{
+		width: 200upx;
+		height: 100upx;
 		background: #66FFCC;
 	}
 	
